@@ -41,7 +41,7 @@ const ConfirmOrder = ({ history }) => {
     const amount = 5006769;
     const currency = "INR";
     const receiptId = "qwsaq1";
-    const response = await fetch("http://localhost:4000/api/v1/payment/process", {
+    const response = await fetch("https://numunch.onrender.com/api/v1/payment/process", {
       method: "POST",
       body: JSON.stringify({
         amount,
@@ -69,7 +69,7 @@ const ConfirmOrder = ({ history }) => {
         };
 
         const validateRes = await fetch(
-          "http://localhost:4000/api/v1/payment/process/validate",
+          "https://numunch.onrender.com/api/v1/payment/process/validate",
           {
             method: "POST",
             body: JSON.stringify(body),
