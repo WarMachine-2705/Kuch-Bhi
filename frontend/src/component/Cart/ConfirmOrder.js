@@ -38,7 +38,7 @@ const ConfirmOrder = ({ history }) => {
 
 
   const proceedToPayment = async (e) => {
-    const amount = 5006769;
+    const amount = subtotal*100;
     const currency = "INR";
     const receiptId = "qwsaq1";
     const response = await fetch("https://numunch.onrender.com/api/v1/payment/process", {
