@@ -38,7 +38,7 @@ const ConfirmOrder = ({ history }) => {
 
 
   const proceedToPayment = async (e) => {
-    const amount = 5006769;
+    const amount = subtotal*100;
     const currency = "INR";
     const receiptId = "qwsaq1";
     const response = await fetch("https://numunch.onrender.com/api/v1/payment/process", {
@@ -161,21 +161,14 @@ const ConfirmOrder = ({ history }) => {
                 <p>Subtotal:</p>
                 <span>₹{subtotal}</span>
               </div>
-              <div>
-                <p>Shipping Charges:</p>
-                <span>₹{shippingCharges}</span>
-              </div>
-              <div>
-                <p>GST:</p>
-                <span>₹{tax}</span>
-              </div>
+              
             </div>
 
             <div className="orderSummaryTotal">
               <p>
                 <b>Total:</b>
               </p>
-              <span>₹{totalPrice}</span>
+              <span>₹{subtotal}</span>
             </div>
 
             <button onClick={proceedToPayment}>Proceed To Payment</button>
